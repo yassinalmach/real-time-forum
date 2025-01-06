@@ -12,7 +12,7 @@
 <body>
     <div id="form-container">
         <div class="container">
-            <div class="form register">
+            <div class="register">
                 <header>Register</header>
                 <form action="/auth/register" method="post">
                     <div class="flex">
@@ -34,7 +34,7 @@
                 </form>
             </div>
 
-            <div class="form login">
+            <div class="login">
                 <header>Login</header>
                 <form action="/auth/login" method="post">
                     <input type="text" placeholder="Email or username" required>
@@ -43,19 +43,19 @@
                 </form>
             </div>
         </div>
-        <script>
-            const formContainer = document.querySelector("#form-container"),
-                registerHeader = document.querySelector(".register header"),
-                loginHeader = document.querySelector(".login header");
-
-            loginHeader.addEventListener("click", () => {
-                formContainer.classList.add("active");
-            });
-            registerHeader.addEventListener("click", () => {
-                formContainer.classList.remove("active");
-            });
-        </script>
     </div>
+    <script>
+        const formContainer = document.querySelector("#form-container"),
+            registerHeader = document.querySelector(".register header"),
+            loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+            formContainer.classList.add("active");
+        });
+        registerHeader.addEventListener("click", () => {
+            formContainer.classList.remove("active");
+        });
+    </script>
 </body>
 
 </html>

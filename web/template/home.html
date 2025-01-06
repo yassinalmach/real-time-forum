@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="title">Forum</div>
+        <div class="navigation">
+            <div onclick="resentPosts()"><i class="fa-sharp fa-solid fa-house"></i></div>
+            <div onclick="likedPosts()"><i class="fa-sharp fa-solid fa-heart"></i></div>
+            <div onclick="createdPosts()"><i class="fa-sharp fa-solid fa-pen-to-square"></i></div>
+        </div>
+        <div class="profile">
+            <div onclick="createPost()" class="new-post"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
+            <div onclick="showNotification()" class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
+            <img src="https://avatar.iran.liara.run/public" alt="avatar">
+        </div>
+    </header>
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li>sport</li>
+                    <li>news</li>
+                    <li>tech</li>
+                </ul>
+            </div>
+            <div class="chat">
+
+            </div>
+        </aside>
+        <main class="main">
+            <div class="post">
+                <div class="user-info">
+                    <img src="" alt="">
+                    <div>
+                        <div class="username"></div>
+                        <div class="timestamp"></div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h3>title</h3>
+                    <p>paragraph</p>
+                </div>
+                <div class="tags-reactions">
+                    <div class="tags"></div>
+                    <div class="reactions">
+                        <div class="reaction"></div>
+                        <div class="reaction"></div>
+                        <div class="reaction"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
