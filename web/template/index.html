@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web/static/css/main.css">
+    <link rel="stylesheet" href="/web/static/css/register.css">
     <title>forum</title>
 </head>
+
 <body>
-    
+    <div id="form-container">
+        <div class="container">
+            <div class="form register">
+                <header>Register</header>
+                <form action="/auth/register" method="post">
+                    <div class="flex">
+                        <input class="split" type="text" placeholder="First Name" required>
+                        <input class="split" type="text" placeholder="Last Name" required>
+                    </div>
+                    <input type="text" placeholder="username" required>
+                    <div class="flex">
+                        <input class="split" id="age-input" type="number" placeholder="Age" required>
+                        <select class="split" name="gender">
+                            <option value="">select gender</option>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                        </select>
+                    </div>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+
+            <div class="form login">
+                <header>Login</header>
+                <form action="/auth/login" method="post">
+                    <input type="text" placeholder="Email or username" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <script>
+            const formContainer = document.querySelector("#form-container"),
+                registerHeader = document.querySelector(".register header"),
+                loginHeader = document.querySelector(".login header");
+
+            loginHeader.addEventListener("click", () => {
+                formContainer.classList.add("active");
+            });
+            registerHeader.addEventListener("click", () => {
+                formContainer.classList.remove("active");
+            });
+        </script>
+    </div>
 </body>
+
 </html>

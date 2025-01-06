@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#form-container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+#form-container .container {
+    position: relative;
+    width: 470px;
+    border-radius: 12px;
+    padding: 20px 30px 120px;
+    background: #4070f4;
+    box-shadow: 0 5px 10px #00000069;
+    overflow: hidden;
+}
+
+#form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+#form-container header {
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#form-container input,
+select {
+    font-size: 15px;
+    height: 45px;
+    padding: 0 10px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    color: #333;
+    background: #fff;
+}
+
+#form-container .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+#form-container .split {
+    width: 200px;
+}
+
+#form-container input[type="submit"] {
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#form-container input[type="submit"]:hover {
+    background-color: #acacac;
+}
+
+#form-container .login input[type="submit"] {
+    background: #4070f4;
+    color: #fff;
+    border: none;
+}
+
+#form-container .login input[type="submit"]:hover {
+    background-color: #3956a7;
+}
+
+#form-container .login {
+    position: absolute;
+    left: 50%;
+    bottom: -86%;
+    transform: translateX(-50%);
+    width: calc(100% + 220px);
+    padding: 20px 140px;
+    border-radius: 50%;
+    height: 100%;
+    background: #fff;
+    transition: all 0.6s ease;
+}
+
+#form-container .login header {
+    color: #333;
+    opacity: 0.6;
+}
+
+#form-container.active .login {
+    bottom: -15%;
+    border-radius: 35%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-container.active .login header {
+    opacity: 1;
+}
+
+#form-container.active .register {
+    opacity: 0.6;
+}
+
+#form-container .login input {
+    border: 1px solid #525252;
+}
+
+#form-container input:focus {
+    box-shadow: 0 1px 5px #3f3f3f49;
+}
