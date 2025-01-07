@@ -18,12 +18,18 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 45px;
+    height: 45px;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-dark);
     color: var(--text-primary);
+    overflow: hidden;
 }
 
 /* ------- header section ----------  */
@@ -72,7 +78,7 @@ body {
 
 #header img {
     width: 45px;
-    height: auto;
+    height: 45px;
 }
 
 /* -------- side bar ------- */
@@ -80,8 +86,8 @@ body {
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 280px;
-    height: 100vh;
+    width: 300px;
+    height: 93vh;
     padding: 30px 0;
     border-right: 1px var(--card-border) solid;
     background-color: var(--bg-dark-second);
@@ -127,6 +133,7 @@ body {
 
 .members-list img {
     width: 40px;
+    height: 40px;
 }
 
 .member {
@@ -134,4 +141,93 @@ body {
     align-items: center;
     gap: 10px;
     margin: 10px;
+}
+
+/* -------- posts ------- */
+
+.main {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--card-border) var(--bg-dark);
+}
+
+.post {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-left: solid var(--main-green-hover);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 30px;
+    width: 1200px;
+}
+
+.post .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-info .timestamp {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-secondary);
+}
+
+.user-info .username {
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.post-content h3 {
+    letter-spacing: 1.2px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--main-green);
+    cursor: pointer;
+}
+
+.post-content p {
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.tags-reactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tags span {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background-color: var(--bg-dark-second);
+    border: 1px solid var(--card-border);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.reactions {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.reactions span {
+    margin-left: 10px;
+
+}
+
+.reactions i {
+    font-size: 20px;
 }
