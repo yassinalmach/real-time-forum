@@ -4,9 +4,10 @@
     --main-green: #4ade80;
     --main-green-hover: #22c55e;
     --bg-dark: #111827;
+    --bg-dark-second: #171f31;
     --bg-card: #1f2937;
     --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
+    --text-secondary: #c0c4cc;
     --card-border: #374151;
     --hover-bg: #272f3d;
 }
@@ -33,7 +34,7 @@ body {
     align-items: center;
     height: 65px;
     padding: 5px;
-    background-color: var(--bg-card);
+    background-color: var(--bg-dark-second);
     border-bottom: 1px solid var(--card-border);
 }
 
@@ -51,8 +52,9 @@ body {
 #header .nav-btns div {
     cursor: pointer;
     border-bottom: solid var(--text-primary);
-    font-size: 35px;
-    padding-bottom: 10px;
+    font-size: 30px;
+    transform: translateY(5px);
+    padding: 4px;
 }
 
 #header .profile-btns {
@@ -73,11 +75,63 @@ body {
     height: auto;
 }
 
-/* -------- main container ------- */
+/* -------- side bar ------- */
 
-aside {
-    font-size: 25px;
-    border-right: 1px var(--card-border) solid;
-    width: 300px;
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
     height: 100vh;
+    padding: 30px 0;
+    border-right: 1px var(--card-border) solid;
+    background-color: var(--bg-dark-second);
+}
+
+.sidebar label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 8px 30px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.categories div {
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 60px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+.members-list {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-dark);
+    border-radius: 20px;
+    margin-inline: 15px;
+}
+
+.members-list input {
+    margin: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--main-green);
+    border-radius: 30px;
+    background-color: var(--bg-dark-second);
+    color: var(--text-primary);
+    height: 40px;
+    font-size: 15px;
+    outline: none;
+    width: calc(100% - 16px);
+}
+
+.members-list img {
+    width: 40px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
 }
