@@ -10,20 +10,19 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="title">Forum</div>
-        <div class="navigation">
+        <div class="nav-btns">
             <div onclick="resentPosts()"><i class="fa-sharp fa-solid fa-house"></i></div>
             <div onclick="likedPosts()"><i class="fa-sharp fa-solid fa-heart"></i></div>
             <div onclick="createdPosts()"><i class="fa-sharp fa-solid fa-pen-to-square"></i></div>
         </div>
-        <div class="profile">
-            <div onclick="createPost()" class="new-post"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
-            <div onclick="showNotification()" class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
-            <img src="https://avatar.iran.liara.run/public" alt="avatar">
+        <div class="profile-btns">
+            <div onclick="createPost()" class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
+            <img src="https://avatar.iran.liara.run/public/boy" alt="avatar">
         </div>
     </header>
-    <div class="main-container">
+    <div class="main-container" style="display: flex;">
         <aside class="sidebar">
             <div class="categories">
                 <h3>Categories</h3>
