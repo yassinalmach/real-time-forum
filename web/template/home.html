@@ -11,7 +11,7 @@
 
 <body>
     <header id="header">
-        <div class="title">Forum</div>
+        <a class="title" href="/">Forum</a>
         <div class="header-btns">
             <div onclick="createPost()" class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
             <div class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
@@ -23,7 +23,7 @@
         <aside class="sidebar">
             <label>Navigation</label>
             <div class="navigation" style="margin-bottom: 25px;">
-                <div onclick="resentPosts()"><i class="fa-sharp fa-solid fa-house"></i> Recent Posts</div>
+                <div onclick="resentPosts()" class="active"><i class="fa-sharp fa-solid fa-house"></i> Recent Posts</div>
                 <div onclick="likedPosts()"><i class="fa-sharp fa-solid fa-heart"></i> Liked Posts</div>
                 <div onclick="createdPosts()"><i class="fa-sharp fa-solid fa-pen-to-square"></i> Created Posts</div>
             </div>
@@ -32,7 +32,7 @@
             <div class="categories" style="margin-bottom: 25px;">
                 <div><i class="fa-solid fa-microchip"></i> technology</div>
                 <div><i class="fa-solid fa-sack-dollar"></i> business</div>
-                <div><i class="fa-solid fa-football"></i> sport</div>
+                <div class="active"><i class="fa-solid fa-football"></i> sport</div>
                 <div><i class="fa-solid fa-notes-medical"></i> health</div>
                 <div><i class="fa-solid fa-newspaper"></i> news</div>
                 <div><i class="fa-solid fa-landmark"></i> politics</div>

@@ -48,6 +48,11 @@ body {
     font-weight: 800;
     font-size: 35px;
     color: var(--main-green-hover);
+    text-decoration: none;
+}
+
+#header .title:hover {
+    color: var(--main-green);
 }
 
 #header .header-btns {
@@ -58,14 +63,36 @@ body {
 
 #header .new-post-btn {
     padding: 10px;
-    border: 1px solid var(--main-green);
-    color: var(--main-green);
+    background-color: var(--bg-card);
+    color: var(--main-green-hover);
+    border: 1px solid var(--main-green-hover);
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#header .new-post-btn:hover {
+    background-color: var(--bg-dark);
+    color: var(--main-green);
+    border: 1px solid var(--main-green);
+    font-weight: 500;
 }
 
 #header .notification {
     font-size: 30px;
+    cursor: pointer;
+    padding: 0px 10px;
 }
+
+#header .notification:hover {
+    background-color: var(--bg-card);
+    padding: 0px 10px;
+    border-radius: 30px;
+}
+
+#header img {
+    cursor: pointer;
+}
+
 /* -------- side bar ------- */
 
 .sidebar {
@@ -79,8 +106,8 @@ body {
 }
 
 .sidebar label {
-    color: var(--main-green);
-    font-size: 16px;
+    color: var(--text-secondary);
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -89,10 +116,22 @@ body {
 
 .navigation div {
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     padding-left: 60px;
     line-height: 2;
+    cursor: pointer;
+}
+
+.navigation div:hover {
+    background-color: var(--bg-card);
+    color: var(--main-green);
+}
+
+.navigation div.active {
+    background-color: var(--card-border);
+    color: var(--main-green);
+    border-left: 4px solid var(--main-green-hover);
 }
 
 .categories div {
@@ -101,6 +140,18 @@ body {
     font-weight: 400;
     padding-left: 60px;
     line-height: 1.8;
+    cursor: pointer;
+}
+
+.categories div:hover {
+    background-color: var(--bg-card);
+    color: var(--main-green);
+}
+
+.categories div.active {
+    background-color: var(--card-border);
+    color: var(--main-green);
+    border-left: 5px solid var(--main-green-hover);
 }
 
 .members-container {
@@ -131,11 +182,22 @@ body {
     width: calc(100% - 14px);
 }
 
+.members-container input:focus {
+    border: 1px solid var(--main-green);
+}
+
 .member {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 8px 15px;
+    cursor: pointer;
+}
+
+.member:hover {
+    background-color: var(--bg-card);
+    color: var(--main-green);
+    border-radius: 20px;
 }
 
 /* -------- posts ------- */
@@ -146,7 +208,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 90vh;
-    overflow: auto;
+    overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: var(--card-border) var(--bg-dark);
 }
@@ -157,19 +219,19 @@ body {
     border-left: solid var(--main-green-hover);
     border-radius: 8px;
     padding: 15px;
-    margin-bottom: 30px;
-    width: 1000px;
+    margin-bottom: 15px;
+    width: 900px;
 }
 
 .post .user-info {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .user-info .timestamp {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 300;
     color: var(--text-secondary);
 }
@@ -181,7 +243,7 @@ body {
 
 .post-content h3 {
     letter-spacing: 1.2px;
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 5px;
     color: var(--main-green);
     cursor: pointer;
@@ -214,7 +276,6 @@ body {
 }
 
 .reactions {
-    font-size: 18px;
     color: var(--text-secondary);
 }
 
@@ -224,5 +285,5 @@ body {
 }
 
 .reactions i {
-    font-size: 20px;
+    font-size: 18px;
 }
