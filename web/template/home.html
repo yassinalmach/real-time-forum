@@ -13,72 +13,39 @@
     <header id="header">
         <a class="title" href="/">Forum</a>
         <div class="header-btns">
-            <div onclick="createPost()" class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
-            <div class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
-            <img src="https://avatar.iran.liara.run/public/boy" alt="avatar">
+            <div class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
+            <div class="logout-btn"><i class="fa-solid fa-power-off"></i> log out</div>
         </div>
     </header>
 
-    <div class="main-container" style="display: flex;">
-        <aside class="sidebar">
-            <label>Navigation</label>
-            <div class="navigation" style="margin-bottom: 25px;">
-                <div onclick="resentPosts()" class="active"><i class="fa-sharp fa-solid fa-house"></i> Recent Posts</div>
-                <div onclick="likedPosts()"><i class="fa-sharp fa-solid fa-heart"></i> Liked Posts</div>
-                <div onclick="createdPosts()"><i class="fa-sharp fa-solid fa-pen-to-square"></i> Created Posts</div>
-            </div>
-
-            <label>Categories</label>
-            <div class="categories" style="margin-bottom: 25px;">
-                <div><i class="fa-solid fa-microchip"></i> technology</div>
-                <div><i class="fa-solid fa-sack-dollar"></i> business</div>
-                <div class="active"><i class="fa-solid fa-football"></i> sport</div>
-                <div><i class="fa-solid fa-notes-medical"></i> health</div>
-                <div><i class="fa-solid fa-newspaper"></i> news</div>
-                <div><i class="fa-solid fa-landmark"></i> politics</div>
-                <div><i class="fa-solid fa-code"></i> devlopement</div>
-            </div>
-
-            <label>members to chat</label>
-            <div class="members-container">
-                <input type="search" placeholder="search for user...">
-                <div class="members-list">
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>yelmach</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>sbeytour</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>hamza maach</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>jawad</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>lazybob</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>mouka</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>lazybob</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>mohmad</span>
-                    </div>
+    <div id="body">
+        <aside id="sidebar">
+            <input type="search" placeholder="search for user...">
+            <div class="members-list">
+                <div class="member">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <span>yelmach</span>
+                </div>
+                <div class="member">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <span>sbeytour</span>
+                </div>
+                <div class="member">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <span>hamza maach</span>
+                </div>
+                <div class="member">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <span>jawad</span>
+                </div>
+                <div class="member">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <span>lazybob</span>
                 </div>
             </div>
         </aside>
-        <main class="main">
+
+        <main>
             <div class="post-container">
                 <div class="post">
                     <div class="user-info">
@@ -90,7 +57,8 @@
                     </div>
                     <div class="post-content" style="margin-bottom: 20px;">
                         <h3>this is a demo post for testing</h3>
-                        <p>im here to test build home page of forum, html and css side. i will do the best styling ever.
+                        <p>im here to test build home page of forum, html and css side. i will do the best styling
+                            ever.
                             you hear it the best in the world im not joking</p>
                     </div>
                     <div class="tags-reactions">
@@ -123,7 +91,8 @@
                     </div>
                     <div class="post-content" style="margin-bottom: 20px;">
                         <h3>this is a demo post for testing</h3>
-                        <p>im here to test build home page of forum, html and css side. i will do the best styling ever.
+                        <p>im here to test build home page of forum, html and css side. i will do the best styling
+                            ever.
                             you hear it the best in the world im not joking</p>
                     </div>
                     <div class="tags-reactions">
@@ -156,7 +125,8 @@
                     </div>
                     <div class="post-content" style="margin-bottom: 20px;">
                         <h3>this is a demo post for testing</h3>
-                        <p>im here to test build home page of forum, html and css side. i will do the best styling ever.
+                        <p>im here to test build home page of forum, html and css side. i will do the best styling
+                            ever.
                             you hear it the best in the world im not joking</p>
                     </div>
                     <div class="tags-reactions">
@@ -189,7 +159,8 @@
                     </div>
                     <div class="post-content" style="margin-bottom: 20px;">
                         <h3>this is a demo post for testing</h3>
-                        <p>im here to test build home page of forum, html and css side. i will do the best styling ever.
+                        <p>im here to test build home page of forum, html and css side. i will do the best styling
+                            ever.
                             you hear it the best in the world im not joking</p>
                     </div>
                     <div class="tags-reactions">
@@ -222,7 +193,8 @@
                     </div>
                     <div class="post-content" style="margin-bottom: 20px;">
                         <h3>this is a demo post for testing</h3>
-                        <p>im here to test build home page of forum, html and css side. i will do the best styling ever.
+                        <p>im here to test build home page of forum, html and css side. i will do the best styling
+                            ever.
                             you hear it the best in the world im not joking</p>
                     </div>
                     <div class="tags-reactions">
@@ -245,9 +217,9 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
+
 </body>
 
 </html>

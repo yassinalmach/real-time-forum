@@ -3,6 +3,7 @@
 
 :root {
     --main-green: #4ade80;
+    --main-red: #ff3c3c;
     --main-green-hover: #22c55e;
     --bg-dark: #111827;
     --bg-dark-second: #171f31;
@@ -19,11 +20,6 @@
     box-sizing: border-box;
 }
 
-img {
-    width: 42px;
-    height: 42px;
-}
-
 body {
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -33,21 +29,24 @@ body {
     overflow: hidden;
 }
 
-/* ------- header section ----------  */
+img {
+    width: 40px;
+}
 
+/* ------- header section ----------  */
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 65px;
     padding: 5px 30px;
+    height: 65px;
     background-color: var(--bg-dark-second);
     border-bottom: 1px solid var(--card-border);
 }
 
 #header .title {
-    font-weight: 800;
     font-size: 35px;
+    font-weight: 800;
     color: var(--main-green-hover);
     text-decoration: none;
 }
@@ -56,44 +55,43 @@ body {
     color: var(--main-green);
 }
 
-#header .header-btns {
+.header-btns {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-#header .new-post-btn {
+.header-btns div {
+    font-weight: 600;
     padding: 10px;
     background-color: var(--bg-card);
-    color: var(--main-green-hover);
-    border: 1px solid var(--main-green-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--text-secondary);
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
-#header .new-post-btn:hover {
+.new-post-btn:hover {
     background-color: var(--bg-dark);
     color: var(--main-green);
-    border: 1px solid var(--main-green);
-    font-weight: 500;
+    border-color: var(--main-green);
 }
 
-#header .notification {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 0px 10px;
+.logout-btn:hover {
+    background-color: var(--bg-dark);
+    color: var(--main-red);
+    border: 1px solid var(--main-red);
 }
 
-#header .notification:hover {
-    background-color: var(--bg-card);
-    padding: 0px 10px;
-    border-radius: 30px;
-}
-
-#header img {
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
+/* -----------  ------------- */
+#body {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
 }
 
 /* -------- side bar ------- */
@@ -212,7 +210,7 @@ body {
 
 .post-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1800px;
 }
 
 .post {
@@ -304,4 +302,45 @@ body {
 
 .reactions i.like {
     color: #0084ff;
+}
+
+/* --------- create post page ------------ */
+
+#new-post-form {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.select-category {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-dark-second);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.cat-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.cat-options div {
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: 1px solid var(--card-border);
+    background: var(--hover-bg);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cat-options div[data-selected="true"] {
+    background-color: var(--main-green-hover);
+    color: var(--bg-dark);
+    border: 1px solid var(--card-border);
+}
+
+.cat-options div:hover {
+    border-color: var(--main-green-hover);
 }
