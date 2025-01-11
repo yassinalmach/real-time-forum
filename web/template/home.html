@@ -10,41 +10,57 @@
 </head>
 
 <body>
-    <header id="header">
-        <a class="title" href="/">Forum</a>
-        <div class="header-btns">
-            <div class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
-            <div class="logout-btn"><i class="fa-solid fa-power-off"></i> log out</div>
-        </div>
-    </header>
+    <div id="header-container">
+        <header>
+            <a class="title" href="/">Forum</a>
+            <div class="header-btns">
+                <div class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
+                <div class="logout-btn"><i class="fa-solid fa-power-off"></i> log out</div>
+            </div>
+        </header>
+    </div>
 
-    <div id="body">
+    <div id="body-container">
         <aside id="sidebar">
             <input type="search" placeholder="search for user...">
             <div class="members-list">
                 <div class="member">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="online-dot"></div>
+                    </div>
                     <span>yelmach</span>
                 </div>
                 <div class="member">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="online-dot"></div>
+                    </div>
                     <span>sbeytour</span>
                 </div>
                 <div class="member">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="active-indicator"></div>
+                    </div>
                     <span>hamza maach</span>
                 </div>
                 <div class="member">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="online-dot"></div>
+                    </div>
                     <span>jawad</span>
                 </div>
                 <div class="member">
-                    <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="online-dot"></div>
+                    </div>
                     <span>lazybob</span>
                 </div>
             </div>
         </aside>
-
         <main>
             <div class="post-container">
                 <div class="post">
@@ -73,10 +89,18 @@
                             <span>engineering</span>
                         </div>
                         <div class="reactions">
-                            <span><i class="fa-solid fa-thumbs-up like"></i> 5</span>
-                            <span><i class="fa-solid fa-thumbs-down"></i> 2</span>
-                            <span><i class="fa-solid fa-comment-dots"></i> 20</span>
-
+                            <div>
+                                <i class="fa-solid fa-thumbs-up like"></i>
+                                <span>5</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <span>2</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <span>20</span>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -219,7 +243,6 @@
             </div>
         </main>
     </div>
-
 </body>
 
 </html>
