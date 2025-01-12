@@ -15,6 +15,9 @@
     /* sizes */
     --sidebar-width: 320px;
     --header-height: 65px;
+    /* status */
+    --online-color: #22c55e;
+    --offline-color: #9f9999;
 }
 
 * {
@@ -155,21 +158,40 @@ header .title:hover {
     cursor: pointer;
 }
 
-.member div,
-.member img {
-    height: 40px;
-    width: 40px;
-}
-
 .member:hover {
     background-color: var(--bg-card);
     color: var(--main-green);
     border-radius: 6px;
 }
 
-.active-indicator.online {}
+.member img {
+    height: 40px;
+    width: 40px;
+}
 
-.active-indicator.offline {}
+.member > div {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.user-status {
+    position: absolute;
+    top: 0px;
+    transform: translate(28px, 28px);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-dark-second);
+}
+
+.user-status.online {
+    background-color: var(--online-color);
+}
+
+.user-status.offline {
+    background-color: var(--offline-color);
+}
 
 /* -------- posts ------- */
 .post-container {
@@ -323,8 +345,6 @@ header .title:hover {
     .sidebar-overlay.active {
         display: block;
     }
-
-    
 }
 
 @media screen and (max-width: 480px) {
