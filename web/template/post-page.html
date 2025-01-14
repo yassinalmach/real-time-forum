@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Post Detail</title>
+</head>
+
+<body>
+    <div id="header-container">
+        <header>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a class="title" href="/">Forum</a>
+            <div class="header-btns">
+                <div class="new-post-btn">
+                    <i class="fa-sharp fa-solid fa-plus"></i>
+                    <span>new post</span>
+                </div>
+                <div class="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>log out</span>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div id="body-container">
+        <aside id="sidebar" class="sidebar">
+            <input type="search" placeholder="search for user...">
+            <div class="members-list">
+                <div class="member">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="user-status online"></div>
+                    </div>
+                    <span>yelmach</span>
+                </div>
+                <div class="member">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="user-status online"></div>
+                    </div>
+                    <span>sbeytour</span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="post-detail-container">
+                <div class="post main-post">
+                    <div class="user-info">
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div>
+                            <div class="username">yelmach</div>
+                            <div class="timestamp">2 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content-detailed">
+                        <h3>this is a demo post for testing</h3>
+                        <p>im here to test build home page of forum, html and css side.</p>
+                    </div>
+                    <div class="tags-reactions">
+                        <div class="tags">
+                            <span>technology</span>
+                            <span>sport</span>
+                            <span>business</span>
+                            <span>news</span>
+                            <span>devlopement</span>
+                        </div>
+                        <div class="reactions">
+                            <div>
+                                <i class="fa-solid fa-thumbs-up like"></i>
+                                <span>5</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <span>2</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <span>20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-form">
+                    <textarea placeholder="leave a comment..." required></textarea>
+                    <div class="form-actions">
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                </div>
+
+                <div class="comments-list">
+                    <div class="comment">
+                        <div class="user-info">
+                            <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                            <div>
+                                <div class="username">yelmach</div>
+                                <div class="timestamp">2 minutes ago</div>
+                            </div>
+                        </div>
+                        <p>what the f</p>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="user-info">
+                            <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                            <div>
+                                <div class="username">yelmach</div>
+                                <div class="timestamp">2 minutes ago</div>
+                            </div>
+                        </div>
+                        <p>very cute<br>hhh</p>
+                    </div>
+                    <div class="comment">
+                        <div class="user-info">
+                            <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                            <div>
+                                <div class="username">yelmach</div>
+                                <div class="timestamp">2 minutes ago</div>
+                            </div>
+                        </div>
+                        <p>what the f</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sidebar toggle functionality
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const body = document.body;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            document.getElementById('body-container').appendChild(overlay);
+
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                body.classList.toggle('sidebar-open');
+            }
+
+            sidebarToggle.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // Comment form handling
+            const textarea = document.querySelector('.comment-form-container textarea');
+            const commentBtn = document.querySelector('.comment-btn');
+            const cancelBtn = document.querySelector('.cancel-btn');
+            const commentsList = document.querySelector('.comments-list');
+
+            commentBtn.addEventListener('click', () => {
+                const comment = textarea.value.trim();
+                if (comment) {
+                    const commentDiv = createCommentElement(comment);
+                    commentsList.insertBefore(commentDiv, commentsList.firstChild);
+                    textarea.value = '';
+                }
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                textarea.value = '';
+            });
+
+            function createCommentElement(content) {
+                const div = document.createElement('div');
+                div.className = 'comment';
+                div.innerHTML = `
+                    <div class="comment-indicator"></div>
+                    <div class="comment-content">
+                        <div class="user-info">
+                            <div class="user-avatar">DS</div>
+                            <div>
+                                <div class="username">dsefwef</div>
+                                <div class="timestamp">just now</div>
+                            </div>
+                        </div>
+                        <p>${content}</p>
+                    </div>
+                `;
+                return div;
+            }
+        });
+    </script>
+</body>
+
+</html>
