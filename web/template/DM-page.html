@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Direct Messages</title>
+</head>
+
+<body>
+    <div id="header-container">
+        <header>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a class="title" href="/">Forum</a>
+            <div class="header-btns">
+                <div class="new-post-btn">
+                    <i class="fa-sharp fa-solid fa-plus"></i>
+                    <span>new post</span>
+                </div>
+                <div class="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>log out</span>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div id="body-container">
+        <aside id="sidebar" class="sidebar">
+            <input type="search" placeholder="search for user...">
+            <div class="members-list">
+                <div class="member">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="user-status online"></div>
+                    </div>
+                    <span class="username">yelmach</span>
+                </div>
+                <div class="member">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="user-status online"></div>
+                    </div>
+                    <span class="username">sbeytour</span>
+                </div>
+                <div class="member">
+                    <div>
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div class="user-status offline"></div>
+                    </div>
+                    <span class="username">hamza maach</span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="chat-main">
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
+                        <div>
+                            <span class="username">yelmach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="messages-container">
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Hey! How are you?</p>
+                            <span class="timestamp">10:30 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>Hi! I'm doing great, thanks for asking. How about you?</p>
+                            <span class="timestamp">10:31 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>I'm good too! nigga whats poppin in zone. lazybob get craaazy last night. someone hits on
+                                his wife bro </p>
+                            <span class="timestamp">10:32 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>daaamn no waaay bro this happed last night </p>
+                            <span class="timestamp">10:33 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-input-container">
+                    <form id="message-form">
+                        <input type="text" placeholder="Type your message..." required>
+                        <button type="submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const body = document.body;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            document.getElementById('body-container').appendChild(overlay);
+
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                body.classList.toggle('sidebar-open');
+            }
+
+            sidebarToggle.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // Message form handling
+            const messageForm = document.getElementById('message-form');
+            const messagesContainer = document.querySelector('.messages-container');
+
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = messageForm.querySelector('input');
+                const message = input.value.trim();
+
+                if (message) {
+                    // Create new message element
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'message sent';
+                    messageDiv.innerHTML = `
+                        <div class="message-content">
+                            <p>${message}</p>
+                            <span class="timestamp">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                        </div>
+                    `;
+
+                    // Add message to container and scroll to bottom
+                    messagesContainer.appendChild(messageDiv);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                    input.value = '';
+                }
+            });
+
+            // Scroll messages container to bottom on load
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+    </script>
+</body>
+
+</html>

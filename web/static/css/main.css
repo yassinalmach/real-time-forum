@@ -179,7 +179,7 @@ main {
     width: 40px;
 }
 
-.member > div {
+.member>div {
     height: 40px;
     width: 40px;
     position: relative;
@@ -627,7 +627,7 @@ select:focus {
         width: calc(100% + 160px);
         padding: 20px 100px;
     }
-    
+
     #form-container .flex {
         flex-direction: column;
         gap: 10px;
@@ -635,5 +635,151 @@ select:focus {
 
     #form-container .split {
         width: 100%;
+    }
+}
+
+/* ---- Direct Message page ---- */
+.chat-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    overflow: hidden;
+    height: 97%;
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: var(--bg-dark-second);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-user-info img {
+    width: 40px;
+    height: 40px;
+}
+
+.chat-user-info .username {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+}
+
+.message.received {
+    align-self: flex-start;
+}
+
+.message.sent {
+    align-self: flex-end;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.message.received .message-content {
+    background-color: var(--bg-dark);
+    border-bottom-left-radius: 5px;
+}
+
+.message.sent .message-content {
+    background-color: var(--main-green);
+    border-bottom-right-radius: 5px;
+}
+
+.message-content p {
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.message.sent .message-content p {
+    color: var(--bg-dark);
+}
+
+.timestamp {
+    font-size: 11px;
+    margin-top: 4px;
+    color: var(--text-secondary);
+}
+
+.message.sent .timestamp {
+    color: var(--bg-dark);
+    opacity: 0.8;
+}
+
+.message-input-container {
+    padding: 15px;
+    background-color: var(--bg-dark-second);
+    border-top: 1px solid var(--card-border);
+}
+
+.message-input-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.message-input-container input {
+    flex: 1;
+    padding: 12px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.message-input-container input:focus {
+    border-color: var(--main-green);
+}
+
+.message-input-container button {
+    background-color: var(--main-green);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.message-input-container button:hover {
+    background-color: var(--main-green-hover);
+}
+
+@media screen and (max-width: 480px) {
+    .message {
+        max-width: 92%;
+    }
+
+    .message-input-container input {
+        width: 50%;
+        padding: 8px;
+    }
+
+    .message-input-container button {
+        padding: 0 15px;
     }
 }
