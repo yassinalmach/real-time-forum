@@ -119,6 +119,10 @@ header .title:hover {
 
 main {
     flex: 1;
+    height: 91vh;
+    overflow-y: auto;
+    scrollbar-color: var(--card-border) var(--bg-dark);
+    scrollbar-width: thin;
 }
 
 /* -------- side bar ------- */
@@ -202,9 +206,6 @@ main {
 /* -------- posts ------- */
 .post-container {
     height: calc(100vh - 85px);
-    overflow-y: auto;
-    scrollbar-color: var(--card-border) var(--bg-dark);
-    scrollbar-width: thin;
     padding-right: 5px;
 }
 
@@ -369,4 +370,115 @@ main {
         width: 20px;
         height: 20px;
     }
+}
+
+
+/* ---- new post page -------- */
+.create-post-form {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.create-post-form h2 {
+    color: var(--main-green);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: var(--main-green);
+}
+
+.form-section textarea {
+    height: 200px;
+    resize: none;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 5px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category i {
+    color: var(--text-secondary);
+}
+
+.category[data-selected="true"] {
+    background-color: var(--bg-dark);
+    border-color: var(--main-green);
+    color: var(--main-green);
+}
+
+.category[data-selected="true"] i {
+    color: var(--main-green);
+}
+
+.category:hover {
+    border-color: var(--main-green);
+    color: var(--main-green);
+}
+
+.category:hover i {
+    color: var(--main-green);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: var(--main-green-hover);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.submit-btn:hover {
+    background-color: var(--main-green);
 }

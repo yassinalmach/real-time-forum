@@ -10,88 +10,115 @@
 </head>
 
 <body>
-    <header id="header">
-        <a class="title" href="/">Forum</a>
-        <div class="header-btns">
-            <div onclick="createPost()" class="new-post-btn"><i class="fa-sharp fa-solid fa-plus"></i> new post</div>
-            <div class="notification"><i class="fa-sharp fa-solid fa-bell"></i></div>
-            <img src="https://avatar.iran.liara.run/public/boy" alt="avatar">
-        </div>
-    </header>
-
-    <div class="main-container" style="display: flex;">
-        <aside class="sidebar">
-            <label>Navigation</label>
-            <div class="navigation" style="margin-bottom: 25px;">
-                <div onclick="resentPosts()" class="active"><i class="fa-sharp fa-solid fa-house"></i> Recent Posts</div>
-                <div onclick="likedPosts()"><i class="fa-sharp fa-solid fa-heart"></i> Liked Posts</div>
-                <div onclick="createdPosts()"><i class="fa-sharp fa-solid fa-pen-to-square"></i> Created Posts</div>
+    <div id="header-container">
+        <header>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a class="title" href="/">Forum</a>
+            <div class="header-btns">
+                <div class="new-post-btn">
+                    <i class="fa-sharp fa-solid fa-plus"></i>
+                    <span>new post</span>
+                </div>
+                <div class="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>log out</span>
+                </div>
             </div>
+        </header>
+    </div>
 
-            <label>Categories</label>
-            <div class="categories" style="margin-bottom: 25px;">
-                <div><i class="fa-solid fa-microchip"></i> technology</div>
-                <div><i class="fa-solid fa-sack-dollar"></i> business</div>
-                <div class="active"><i class="fa-solid fa-football"></i> sport</div>
-                <div><i class="fa-solid fa-notes-medical"></i> health</div>
-                <div><i class="fa-solid fa-newspaper"></i> news</div>
-                <div><i class="fa-solid fa-landmark"></i> politics</div>
-                <div><i class="fa-solid fa-code"></i> devlopement</div>
-            </div>
-
-            <label>members to chat</label>
-            <div class="members-container">
-                <input type="search" placeholder="search for user...">
-                <div class="members-list">
-                    <div class="member">
+    <div id="body-container">
+        <aside id="sidebar" class="sidebar">
+            <input type="search" placeholder="search for user...">
+            <div class="members-list">
+                <div class="member">
+                    <div>
                         <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>yelmach</span>
+                        <div class="user-status online"></div>
                     </div>
-                    <div class="member">
+                    <span>yelmach</span>
+                </div>
+                <div class="member">
+                    <div>
                         <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>sbeytour</span>
+                        <div class="user-status online"></div>
                     </div>
-                    <div class="member">
+                    <span>sbeytour</span>
+                </div>
+                <div class="member">
+                    <div>
                         <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>hamza maach</span>
+                        <div class="user-status offline"></div>
                     </div>
-                    <div class="member">
+                    <span>hamza maach</span>
+                </div>
+                <div class="member">
+                    <div>
                         <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>jawad</span>
+                        <div class="user-status offline"></div>
                     </div>
-                    <div class="member">
+                    <span>jawad</span>
+                </div>
+                <div class="member">
+                    <div>
                         <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>lazybob</span>
+                        <div class="user-status offline"></div>
                     </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>mouka</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>lazybob</span>
-                    </div>
-                    <div class="member">
-                        <img src="https://avatar.iran.liara.run/public/boy" alt="profile">
-                        <span>mohmad</span>
-                    </div>
+                    <span>lazybob</span>
                 </div>
             </div>
         </aside>
-        <main class="main">
-            <form id="new-post-form">
-                <div class="select-category">
-                    <div class="cat-options">
-                      <div class="cat" data-selected="true">technology</div>
-                      <div class="cat" data-selected="true">health</div>
-                      <div class="cat" data-selected="false">sport</div>
-                      <div class="cat" data-selected="false">business</div>
-                      <div class="cat" data-selected="false">news</div>
-                      <div class="cat" data-selected="true">politics</div>
-                      <div class="cat" data-selected="false">devlopement</div>
-                      <div class="cat" data-selected="false">engineering</div>
+
+        <main>
+            <form id="new-post-form" class="create-post-form">
+                <h2>Create New Post</h2>
+
+                <div class="form-section">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" name="title" placeholder="Enter your post title..." required>
+                </div>
+
+                <div class="form-section">
+                    <label>Categories</label>
+                    <div class="categories-container">
+                        <div class="category" data-selected="true">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>Technology</span>
+                        </div>
+                        <div class="category" data-selected="false">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>Health</span>
+                        </div>
+                        <div class="category" data-selected="false">
+                            <i class="fa-solid fa-futbol"></i>
+                            <span>Sport</span>
+                        </div>
+                        <div class="category" data-selected="false">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Business</span>
+                        </div>
+                        <div class="category" data-selected="false">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <span>News</span>
+                        </div>
+                        <div class="category" data-selected="false">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Development</span>
+                        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="form-section">
+                    <label for="post-content">Content</label>
+                    <textarea id="post-content" name="content" placeholder="Write your post content here..."
+                        required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Create Post</button>
+                </div>
             </form>
         </main>
     </div>
